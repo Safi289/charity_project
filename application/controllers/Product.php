@@ -78,8 +78,10 @@ class Product extends CI_Controller {
 
 		$data = array();
 
-		$data['all_product']      = $this->pro_model->get_all_product($data);
-		// echo "<pre>";print_r($data['all_product']);die;
+		$data['product_info']     = $this->pro_model->get_all_product();
+		$data['all_category']     = $this->cat_model->get_all_categories();
+		//echo "<pre>";print_r($data['product_info']);die;
+
 		$data['title']            = 'Show Product';
 		$data['page_title']       = 'Show Product';
 		$data['headerlink']       = $this->load->view('backend_template/headerlink', $data, TRUE);	
@@ -130,14 +132,39 @@ class Product extends CI_Controller {
 
 		$product_id = $post['product_id'];
 
+		$data['product_image'] = $this->input->post('prev_product_image');
+
+		$config['upload_path']          = 'uploads/';
+        $config['allowed_types']        = 'gif|jpg|png';
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('pro_image'))
+        {
+            $error = array('error' => $this->upload->display_errors());
+        }
+        else
+        {
+        	$file_data = $this->upload->data();
+            $data['product_image'] = $file_data['file_name'];
+        }
+
+        //echo "<pre>";print_r($data);die;
+
 		$this->pro_model->update_product_info($product_id, $data);	
+		//echo "<pre>";print_r($data);die;
 		$this->session->set_flashdata('message', 'Successfully Updated');	
 		redirect('show-product');
 	}
 
 	public function delete_product($product_id)
 	{
+		$product_info = $this->pro_model->get_product_info($product_id);
+		//echo "<pre>";print_r($product_info);die;
+		unlink("uploads/".$product_info['product_image']);
+
 		$this->pro_model->delete_product($product_id);
+
 		$this->session->set_flashdata('message', 'Successfully Deleted');
 		redirect('show-product');
 	}

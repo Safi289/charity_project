@@ -45,12 +45,7 @@
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li>
-                <a href="<?php echo base_url();?>add-category">
-                  <i class="fa fa-circle-o"></i>
-                   <span>Add Category</span>
-                 </a>   
-                </li>
+                
 
                 <li>
                   <a href="<?php echo base_url();?>show-category">
@@ -63,6 +58,8 @@
           </ul>
         </li>
 
+
+
         <li class="treeview">
               <a href="#">
                 <i class="fa fa-dashboard"></i> <span>Products</span>
@@ -71,17 +68,32 @@
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li>
-                <a href="<?php echo base_url();?>add-product">
-                  <i class="fa fa-circle-o"></i>
-                   <span>Add Products</span>
-                 </a>   
-                </li>
+               
 
                 <li>
                   <a href="<?php echo base_url();?>show-product">
                     <i class="fa fa-circle-o"></i>
                      <span>All Products</span>
+                      <span class="pull-right-container">
+                     </span>
+                  </a>  
+                </li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+              <a href="#">
+                <i class="fa fa-dashboard"></i> <span>Users</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+
+                <li>
+                  <a href="<?php echo base_url();?>show-user">
+                    <i class="fa fa-circle-o"></i>
+                     <span>All Users</span>
                       <span class="pull-right-container">
                      </span>
                   </a>  

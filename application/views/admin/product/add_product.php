@@ -53,14 +53,14 @@
 
                   <div class="col-md-6">
                     <div class="form-check">
-                      <input name="hot" type="checkbox" class="form-check-input" id="exampleCheck1" value="2">
+                      <input name="hot" type="checkbox" class="form-check-input" id="exampleCheck1" value="1">
                       <label  class="form-check-label" for="exampleCheck1">
                         Hot Product
                       </label>
                     </div>
 
                     <div class="form-check">
-                      <input name="featured" type="checkbox" class="form-check-input" id="exampleCheck" value="1">
+                      <input name="featured" type="checkbox" class="form-check-input" id="exampleCheck" value="2">
                       <label class="form-check-label" for="exampleCheck1">
                         Featured Product
                       </label>

@@ -78,9 +78,20 @@ $route['delete-category/(:any)'] = 'dashboard/delete_category/$1';
 //Category End
 
 //Product Start
-$route['add-product']      = 'product/add_product';
-$route['submit-product']   = 'product/submit_product';
-$route['show-product']     = 'product/show_product';
+$route['add-product']           = 'product/add_product';
+$route['submit-product']        = 'product/submit_product';
+$route['show-product']          = 'product/show_product';
 $route['edit-product/(:any)']   = 'product/edit_product/$1';
 $route['update-product']        = 'product/update_product';
 $route['delete-product/(:any)'] = 'product/delete_product/$1';
+//product End
+
+//User Start
+$route['add-user']               = 'user/add_user';
+$route['submit-user']            = 'user/submit_user';
+$route['show-user']              = 'user/show_user';
+$route['edit-user/(:any)']       = 'user/edit_user/$1';
+$route['update-user']            = 'user/update_user';
+$route['edit-user-image']        = 'user/edit_user_image';
+$route['delete-user/(:any)']     = 'user/delete_user/$1';
+//user end

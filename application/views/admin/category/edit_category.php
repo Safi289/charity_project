@@ -13,7 +13,9 @@
             </div>
 
             <form role="form" method="post" action="<?php echo base_url();?>update-category">
+
               <input type="hidden" name="cat_id" class="form-control" id="" value="<?php echo $category_info['cat_id']; ?>">
+              
               	<div class="box-body">
 	                <div class="form-group">
 	                  	<label for="exampleInputEmail1">Category Name</label>                       

@@ -118,10 +118,12 @@ class Dashboard extends CI_Controller {
 	public function update_category()
 	{
 		$post = $this->input->post();
-
+		//echo '<pre>';print_r($post);die;
 		$data = array();
 		$data['cat_name'] = $post['cat_name'];
 		$cat_id = $post['cat_id'];
+
+
 
 		$this->cat_model->update_category_info($cat_id, $data);	
 		$this->session->set_flashdata('message', 'Successfully Updated');	
