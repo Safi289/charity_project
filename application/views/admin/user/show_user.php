@@ -16,7 +16,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table id="userview" class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>SL</th>
@@ -26,145 +26,11 @@
                   <th>User Address</th>
                   <th>User Type</th>
                   <th>User Image</th>
+
                 </tr>
                 </thead>
                 <tbody>
-                  <?php $sl = 1;foreach($all_user as $row) {?> 
-                    <tr>
-                      <td>
-                         <?php echo $sl;?> 
-                      </td>
-                      <td>
-                        <?php echo $row['name'];?> 
-                      </td>
-                      <td>
-                        <?php echo $row['email'];?> 
-                      </td>
-                      <td>
-                        <?php echo $row['user_mobile'];?> 
-                      </td>
-                      <td>
-                        <?php echo $row['user_address'];?> 
-                      </td>
-                      <td>
-                        <?php if($row['user_type'] == '2') {
-                          echo 'Editor';
-                        } if($row['user_type'] == '3') {
-                          echo 'Motivator';
-                        }?> 
-                      </td>
-                      <td>
-                        <img src="<?=base_url();?>uploads/<?php echo $row['user_image'];?>" alt="" style="width: 80px;height: 50px;"> 
-                      </td>
-                      
-                      <td>
-                        <button onclick="setEventId(<?= $row['id'] ?>)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit_user_<?= $row['id']?>" href="javascript:void(0)">
-                         Edit
-                        </button>
-                        <a href="<?= base_url();?>delete-user/<?= $row['id']?>" class="btn btn-danger btn-sm">Delete</a>
-
-                       <div class="modal fade" id="edit_user_<?= $row['id']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Edit Product</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-
-                            <div class="modal-body"> 
-                             <div class="row">
-    <div class="col-md-12">
-
-        <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Edit User</h3>
-            </div>
-
-            <form role="form" method="post" action="<?php echo base_url();?>update-user" enctype="multipart/form-data">
-
-               <input type="hidden" name="id" class="form-control" id="" value="<?php echo $row['id']; ?>">
-
-                <div class="box-body">
                   
-                  <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">User Name</label>
-                        <input type="text" name="user_name" class="form-control" id="exampleInputEmail1" value="<?php echo $row['name']; ?>">
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">User Email</label>
-                        <input type="text" name="user_email" class="form-control" value="<?php echo $row['email']; ?>">
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">User Mobile</label>
-                        <input type="text" name="user_mobile" class="form-control" value="<?php echo $row['user_mobile']; ?>">
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">User Addess</label>
-                        <input type="text" name="user_address" class="form-control" value="<?php echo $row['user_address']; ?>">
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">User Password</label>
-                        <input type="Password" name="user_password" class="form-control" value="">
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">User Image</label>
-                        <input type="file" class="form-control" name="user_image">
-                        <input type="hidden" class="form-control" name="prev_user_image" value="<?php echo $row['user_image']?>">
-                    </div>
-                  </div>
-
-                   <div class="col-md-6">
-                    <div class="form-check">
-                      <input name="editor" type="checkbox" class="form-check-input" id="exampleCheck1" value="1" <?php if($row['user_type'] == 2 ){echo 'checked';};?>>
-                      <label  class="form-check-label" for="exampleCheck1">
-                        Editor
-                      </label>
-                    </div>
-
-                    <div class="form-check">
-                      <input name="motivator" type="checkbox" class="form-check-input" id="exampleCheck" value="2" <?php if($row['user_type'] == 3 ){echo 'checked';};?>>
-                       <label class="form-check-label" for="exampleCheck1">
-                        Motivator
-                      </label>
-                    </div>
-                  </div> 
-
-                </div>
-                 <div class="box-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div> 
-            </form>
-
-        </div>
-
-    </div>
-</div>
-                          </div>
-                          </div>
-                      </div>
-                    </div>
-
-                    </td>
-                  </tr>
-                   <?php $sl++;}?>   
                 </tbody>
               </table>
             </div>      
@@ -259,11 +125,67 @@
                 </div>
             </form>
 
-        </div>
+          </div>
 
-    </div>
-</div>  <!-- Add User -->
+        </div>
+       </div>  <!-- Add User -->
       </div>
       </div>
   </div>
 </div>
+
+<!-- Start Edit Modal -->
+
+<div class="modal fade" id="edit_user_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+</div>
+
+<!-- End Edit Modal -->
+
+
+<script type="text/javascript">
+    
+     $(document).ready(function()
+     {
+        $('.edit_user_btn').click(function()
+        {
+                var id = $(this).attr('data-id');
+
+                $.ajax({
+                    url       : "<?php echo base_url(); ?>ajax-user-data", 
+                    data      : {
+                      id : id
+                    },
+                    method    : 'GET',
+                    dataType  : 'json',
+                    success   : function(response){
+                      // console.log(response.edit_user);
+                      $("#edit_user_modal").html(response.edit_user);
+                      $('#edit_user_modal').modal('show');
+                    }
+
+                });
+        });
+
+
+        var dataTable = $('#userview').DataTable({
+
+        "processing" : true,
+        "serverSide" : true,
+        "order"      : [],
+        "ajax"       :{
+          url  : "<?php echo base_url(); ?>fetch-user",
+          type : "POST"
+        },
+        "columnDefs"  : [{
+          "target"    : [0,3,4],
+          "orderable" : false,
+        },],
+
+      });
+
+     });
+</script>
+
+
+

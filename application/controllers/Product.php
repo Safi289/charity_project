@@ -69,8 +69,10 @@ class Product extends CI_Controller {
         }
 		
 		$this->pro_model->add_pro($data);
+		
 		redirect('show-product');
 	}
+
 
 	public function show_product()
 	{
@@ -167,6 +169,18 @@ class Product extends CI_Controller {
 
 		$this->session->set_flashdata('message', 'Successfully Deleted');
 		redirect('show-product');
+	}
+
+	public function ajax_product_data()
+	{
+		$get = $this->input->get();
+		//print_r($get);
+	 	$data['get_product'] = $this->pro_model->get_product_info($get['id']);
+	 	$data['all_category'] = $this->cat_model->get_all_categories();
+	 	//print_r($data);
+	 	$data['edit_product'] = $this->load->view('admin/product/edit_product_modal', $data, true);
+	 	echo json_encode($data);
+   	    exit(); 
 	}
 
 

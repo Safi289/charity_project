@@ -1,224 +1,483 @@
-<div class="hero-wrap" style="background-image: url('assets/frontend_asset/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
-          <div class="col-md-6 order-md-last ftco-animate mt-5" data-scrollax=" properties: { translateY: '70%' }">
-            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">We can help to save the world</h1>
-            <p><a href="#" class="btn btn-black py-3 px-4">How Can I Help</a></p>
-          </div>
-          <div class="col-md-6 d-none d-md-block">
-            <div class="play-video pb-5 d-flex align-items-center">
-              <p><a href="https://vimeo.com/45830194" class="popup-vimeo"><span class="icon"><i class="ion-ios-play "></i></span> <span class="play">Play video</span></a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-</div>
- <section class="ftco-section ftco-no-pt ftco-no-pb ftco-volunteer">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-md-7 img-volunteer" style="background-image: url(assets/frontend_asset/images/about.jpg);">
-    				<div class="row no-gutters justify-content-end">
-    					<div class="col-lg-7">
-    						<div class="text py-5 pl-md-4 pr-md-3">
-    							<h2 class="mb-4">We need volunteers in Africa</h2>
-    							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-    							<p><a href="#" class="btn btn-primary py-3 px-4">Join now</a></p>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-5 d-flex align-items-center bg-black">
-    				<div class="about-text py-5 pl-md-5">
-    					<h2>Donation so far <span>$</span><strong class="number" data-number="380000">0</strong></h2>
-    					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-    					<p><a href="#" class="btn btn-black py-3 px-4">Donate now</a></p>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </section>
+<section class="hero-section">
+        <div class="hero-items owl-carousel">
 
-    <section class="services-section py-5 py-md-0 bg-light">
-      <div class="container">
-        <div class="row no-gutters d-flex">
-          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-charity"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Help &amp; Support</h3>
-                <p>	203 Fake St. Mountain View, San Francisco, California, USA</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-adoption"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Adoption</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>    
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services active d-block">
-              <div class="icon"><span class="flaticon-volunteer"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Volunteering</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-open-book"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Education</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>      
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section ftco-causes">
-    	<div class="container">
-    		<div class="row justify-content-center pb-3">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Let's build the world without child abuse and neglect</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-          </div>
-        </div>
-    	</div>
-    	<div class="container">
-        <div class="row">
-        	<div class="col-md-12">
-        		<div class="carousel-causes owl-carousel">
-        			<div class="item">
-		        		<a href="causes.html" class="causes text-center">
-		        			<div class="img" style="background-image: url(assets/frontend_asset/images/causes-1.jpg);"></div>
-		        			<h2>Adoption, Fostering &amp; Children Care</h2>
-		        		</a>
-        			</div>
-        			<div class="item">
-	        			<a href="causes.html" class="causes text-center">
-		        			<div class="img" style="background-image: url(assets/frontend_asset/images/causes-2.jpg);"></div>
-		        			<h2>Disadvantages Young People</h2>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="causes.html" class="causes text-center">
-		        			<div class="img" style="background-image: url(assets/frontend_asset/images/causes-3.jpg);"></div>
-		        			<h2>Meditation &amp; Crisis Services</h2>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="causes.html" class="causes text-center">
-		        			<div class="img" style="background-image: url(assets/frontend_asset/images/causes-4.jpg);"></div>
-		        			<h2>Providing Children Care and Education</h2>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="causes.html" class="causes text-center">
-		        			<div class="img" style="background-image: url(assets/frontend_asset/images/causes-5.jpg);"></div>
-		        			<h2>Safeguarding &amp; Consultancy Services</h2>
-		        		</a>
-	        		</div>
-        		</div>
-        	</div>
-        </div>
-    	</div>
-    </section>
-   	
-   	<section class="testimony-section">
-      <div class="container">
-        <div class="row ftco-animate justify-content-center">
-        	<div class="col-md-6 d-flex">
-        		<div class="testimony-img" style="background-image: url(assets/frontend_asset/images/testimony-img.png);"></div>
-        	</div>
-          <div class="col-md-6 py-5">
-          	<div class="heading-section heading-section-white pt-4 ftco-animate">
-		          <h2 class="mb-0">Success Stories</h2>
-		        </div>
-            <div class="carousel-testimony owl-carousel ftco-owl">
-              <div class="item">
-                <div class="testimony-wrap pb-4">
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                  <div class="d-flex">
-	                  <div class="user-img" style="background-image: url(assets/frontend_asset/images/person_1.jpg)">
-	                  </div>
-	                  <div class="pos ml-3">
-	                  	<p class="name">Jeff Nucci</p>
-	                    <span class="position">Businessman</span>
-	                  </div>
-	                </div>
+          
+          <?php foreach($all_slider as $row){?>
+            <div class="single-hero-items set-bg" data-setbg="<?=base_url();?>uploads/slider/<?php echo $row['slider_image'];?>">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                           <h1><?php echo $row['slider_title']; ?></h1>
+                            <p><?php echo $row['slider_text']; ?></p>
+                        </div>
+                    </div>
+                    <!-- <div class="off-card">
+                        <h2>Sale <span>50%</span></h2>
+                    </div> -->
                 </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap pb-4">
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                  <div class="d-flex">
-	                  <div class="user-img" style="background-image: url(assets/frontend_asset/images/person_1.jpg)">
-	                  </div>
-	                  <div class="pos ml-3">
-	                  	<p class="name">Jeff Nucci</p>
-	                    <span class="position">Businessman</span>
-	                  </div>
-	                </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap pb-4">
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                  <div class="d-flex">
-	                  <div class="user-img" style="background-image: url(assets/frontend_asset/images/person_1.jpg)">
-	                  </div>
-	                  <div class="pos ml-3">
-	                  	<p class="name">Jeff Nucci</p>
-	                    <span class="position">Businessman</span>
-	                  </div>
-	                </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap pb-4">
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                  <div class="d-flex">
-	                  <div class="user-img" style="background-image: url(assets/frontend_asset/images/person_1.jpg)">
-	                  </div>
-	                  <div class="pos ml-3">
-	                  	<p class="name">Jeff Nucci</p>
-	                    <span class="position">Businessman</span>
-	                  </div>
-	                </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap pb-4">
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                  <div class="d-flex">
-	                  <div class="user-img" style="background-image: url(assets/frontend_asset/images/person_1.jpg)">
-	                  </div>
-	                  <div class="pos ml-3">
-	                  	<p class="name">Jeff Nucci</p>
-	                    <span class="position">Businessman</span>
-	                  </div>
-	                </div>
-                </div>
-              </div>
             </div>
-          </div>
+          <?php }?>           
+
         </div>
-      </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Banner Section Begin -->
+    <div class="banner-section spad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="<?php echo base_url();?>assets/frontend_asset/img/banner-1.jpg" alt="">
+                        <div class="inner-text">
+                            <h4>Men’s</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="<?php echo base_url();?>assets/frontend_asset/img/banner-2.jpg" alt="">
+                        <div class="inner-text">
+                            <h4>Women’s</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="<?php echo base_url();?>assets/frontend_asset/img/banner-3.jpg" alt="">
+                        <div class="inner-text">
+                            <h4>Kid’s</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner Section End -->
+
+    <!-- Women Banner Section Begin -->
+    <section class="women-banner spad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="product-large set-bg" data-setbg="<?php echo base_url();?>assets/frontend_asset/img/products/women-large.jpg">
+                        <h2>Women’s</h2>
+                        <a href="#">Discover More</a>
+                    </div>
+                </div>
+                <div class="col-lg-8 offset-lg-1">
+                    <div class="filter-control">
+                        <ul>
+                            <li class="active">Clothings</li>
+                            <li>HandBag</li>
+                            <li>Shoes</li>
+                            <li>Accessories</li>
+                        </ul>
+                    </div>
+                    <div class="product-slider owl-carousel">
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="<?php echo base_url();?>assets/frontend_asset/img/products/women-1.jpg" alt="">
+                                <div class="sale">Sale</div>
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Coat</div>
+                                <a href="#">
+                                    <h5>Pure Pineapple</h5>
+                                </a>
+                                <div class="product-price">
+                                    $14.00
+                                    <span>$35.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="<?php echo base_url();?>assets/frontend_asset/img/products/women-2.jpg" alt="">
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Shoes</div>
+                                <a href="#">
+                                    <h5>Guangzhou sweater</h5>
+                                </a>
+                                <div class="product-price">
+                                    $13.00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="<?php echo base_url();?>assets/frontend_asset/img/products/women-3.jpg" alt="">
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Towel</div>
+                                <a href="#">
+                                    <h5>Pure Pineapple</h5>
+                                </a>
+                                <div class="product-price">
+                                    $34.00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="<?php echo base_url();?>assets/frontend_asset/img/products/women-4.jpg" alt="">
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Towel</div>
+                                <a href="#">
+                                    <h5>Converse Shoes</h5>
+                                </a>
+                                <div class="product-price">
+                                    $34.00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Women Banner Section End -->
+
+    <!-- Deal Of The Week Section Begin-->
+    <section class="deal-of-week set-bg spad" data-setbg="<?php echo base_url();?>assets/frontend_asset/img/time-bg.jpg">
+        <div class="container">
+            <div class="col-lg-6 text-center">
+                <div class="section-title">
+                    <h2>Deal Of The Week</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed<br /> do ipsum dolor sit amet,
+                        consectetur adipisicing elit </p>
+                    <div class="product-price">
+                        $35.00
+                        <span>/ HanBag</span>
+                    </div>
+                </div>
+                <div class="countdown-timer" id="countdown">
+                    <div class="cd-item">
+                        <span>56</span>
+                        <p>Days</p>
+                    </div>
+                    <div class="cd-item">
+                        <span>12</span>
+                        <p>Hrs</p>
+                    </div>
+                    <div class="cd-item">
+                        <span>40</span>
+                        <p>Mins</p>
+                    </div>
+                    <div class="cd-item">
+                        <span>52</span>
+                        <p>Secs</p>
+                    </div>
+                </div>
+                <a href="#" class="primary-btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+    <!-- Deal Of The Week Section End -->
+
+    <!-- Man Banner Section Begin -->
+    <section class="man-banner spad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="filter-control">
+                        <ul>
+                            <li class="active">Clothings</li>
+                            <li>HandBag</li>
+                            <li>Shoes</li>
+                            <li>Accessories</li>
+                        </ul>
+                    </div>
+                    <div class="product-slider owl-carousel">
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="<?php echo base_url();?>assets/frontend_asset/img/products/man-1.jpg" alt="">
+                                <div class="sale">Sale</div>
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Coat</div>
+                                <a href="#">
+                                    <h5>Pure Pineapple</h5>
+                                </a>
+                                <div class="product-price">
+                                    $14.00
+                                    <span>$35.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="<?php echo base_url();?>assets/frontend_asset/img/products/man-2.jpg" alt="">
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Shoes</div>
+                                <a href="#">
+                                    <h5>Guangzhou sweater</h5>
+                                </a>
+                                <div class="product-price">
+                                    $13.00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="<?php echo base_url();?>assets/frontend_asset/img/products/man-3.jpg" alt="">
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Towel</div>
+                                <a href="#">
+                                    <h5>Pure Pineapple</h5>
+                                </a>
+                                <div class="product-price">
+                                    $34.00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <img src="<?php echo base_url();?>assets/frontend_asset/img/products/man-4.jpg" alt="">
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Towel</div>
+                                <a href="#">
+                                    <h5>Converse Shoes</h5>
+                                </a>
+                                <div class="product-price">
+                                    $34.00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1">
+                    <div class="product-large set-bg m-large" data-setbg="<?php echo base_url();?>assets/frontend_asset/img/products/man-large.jpg">
+                        <h2>Men’s</h2>
+                        <a href="#">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Man Banner Section End -->
+
+    <!-- Instagram Section Begin -->
+    <div class="instagram-photo">
+        <div class="insta-item set-bg" data-setbg="<?php echo base_url();?>assets/frontend_asset/img/insta-1.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">colorlib_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="<?php echo base_url();?>assets/frontend_asset/img/insta-2.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">colorlib_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="<?php echo base_url();?>assets/frontend_asset/img/insta-3.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">colorlib_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="<?php echo base_url();?>assets/frontend_asset/img/insta-4.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">colorlib_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="<?php echo base_url();?>assets/frontend_asset/img/insta-5.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">colorlib_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="<?php echo base_url();?>assets/frontend_asset/img/insta-6.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">colorlib_Collection</a></h5>
+            </div>
+        </div>
+    </div>
+    <!-- Instagram Section End -->
+
+    <!-- Latest Blog Section Begin -->
+    <section class="latest-blog spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>From The Blog</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-latest-blog">
+                        <img src="<?php echo base_url();?>assets/frontend_asset/img/latest-1.jpg" alt="">
+                        <div class="latest-text">
+                            <div class="tag-list">
+                                <div class="tag-item">
+                                    <i class="fa fa-calendar-o"></i>
+                                    May 4,2019
+                                </div>
+                                <div class="tag-item">
+                                    <i class="fa fa-comment-o"></i>
+                                    5
+                                </div>
+                            </div>
+                            <a href="#">
+                                <h4>The Best Street Style From London Fashion Week</h4>
+                            </a>
+                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-latest-blog">
+                        <img src="<?php echo base_url();?>assets/frontend_asset/img/latest-2.jpg" alt="">
+                        <div class="latest-text">
+                            <div class="tag-list">
+                                <div class="tag-item">
+                                    <i class="fa fa-calendar-o"></i>
+                                    May 4,2019
+                                </div>
+                                <div class="tag-item">
+                                    <i class="fa fa-comment-o"></i>
+                                    5
+                                </div>
+                            </div>
+                            <a href="#">
+                                <h4>Vogue's Ultimate Guide To Autumn/Winter 2019 Shoes</h4>
+                            </a>
+                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-latest-blog">
+                        <img src="<?php echo base_url();?>assets/frontend_asset/img/latest-3.jpg" alt="">
+                        <div class="latest-text">
+                            <div class="tag-list">
+                                <div class="tag-item">
+                                    <i class="fa fa-calendar-o"></i>
+                                    May 4,2019
+                                </div>
+                                <div class="tag-item">
+                                    <i class="fa fa-comment-o"></i>
+                                    5
+                                </div>
+                            </div>
+                            <a href="#">
+                                <h4>How To Brighten Your Wardrobe With A Dash Of Lime</h4>
+                            </a>
+                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="benefit-items">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="<?php echo base_url();?>assets/frontend_asset/img/icon-1.png" alt="">
+                            </div>
+                            <div class="sb-text">
+                                <h6>Free Shipping</h6>
+                                <p>For all order over 99$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="<?php echo base_url();?>assets/frontend_asset/img/icon-2.png" alt="">
+                            </div>
+                            <div class="sb-text">
+                                <h6>Delivery On Time</h6>
+                                <p>If good have prolems</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="<?php echo base_url();?>assets/frontend_asset/img/icon-1.png" alt="">
+                            </div>
+                            <div class="sb-text">
+                                <h6>Secure Payment</h6>
+                                <p>100% secure payment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>

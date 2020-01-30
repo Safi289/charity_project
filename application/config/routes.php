@@ -54,19 +54,26 @@ $route['default_controller']   = 'home';
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;
 
+//frontend home start
+$route['contact']       = 'home/contact';
+$route['shop']          = 'home/shop';
+$route['blog']          = 'home/blog';
+$route['blog-detail']   = 'home/blog_detail';
+$route['shopping-cart'] = 'home/cart';
+$route['check-out']     = 'home/check_out';
+$route['register']      = 'home/register';
+$route['login-user']    = 'home/login';
+//frontend home end
 
-$route['contact']  = 'home/contact';
-$route['contact1'] = 'home/contact1';
-$route['about-us'] = 'home/about';
-$route['causes']   = 'home/causes';
-$route['stories']  = 'home/stories';
 
+//login for dashboard
 $route['login']    = 'login';
 $route['formpost'] = 'login/formpost';
 
 $route['dashboard']   = 'dashboard';
 $route['logout']      = 'dashboard/logout';
 $route['widgets']     = 'dashboard/widgets';
+$route['fetch-category'] = 'dashboard/fetch_category';
 
 //Category Start
 $route['add-category']           = 'dashboard/add_category';
@@ -75,6 +82,8 @@ $route['show-category']          = 'dashboard/all_category';
 $route['edit-category/(:any)']   = 'dashboard/edit_category/$1';
 $route['update-category']        = 'dashboard/update_category';
 $route['delete-category/(:any)'] = 'dashboard/delete_category/$1';
+
+$route['ajax-category-data']        = 'dashboard/ajax_category_data';
 //Category End
 
 //Product Start
@@ -84,6 +93,8 @@ $route['show-product']          = 'product/show_product';
 $route['edit-product/(:any)']   = 'product/edit_product/$1';
 $route['update-product']        = 'product/update_product';
 $route['delete-product/(:any)'] = 'product/delete_product/$1';
+
+$route['ajax-product-data']     = 'product/ajax_product_data';
 //product End
 
 //User Start
@@ -94,4 +105,19 @@ $route['edit-user/(:any)']       = 'user/edit_user/$1';
 $route['update-user']            = 'user/update_user';
 $route['edit-user-image']        = 'user/edit_user_image';
 $route['delete-user/(:any)']     = 'user/delete_user/$1';
+
+$route['ajax-user-data']         = 'user/ajax_user_data';
+
+$route['fetch-user']             = 'user/fetch_user';
 //user end
+
+//Slider Start
+//$route['add-slider']           = 'slider/add_slider';
+$route['submit-slider']           = 'slider/submit_slider';
+$route['show-slider']             = 'slider/show_slider';
+//Slider End
+
+//Brand Start
+$route['add-brand']           = 'brand/add_brand';
+$route['submit-brand']        = 'brand/submit_brand';
+//Brand End 

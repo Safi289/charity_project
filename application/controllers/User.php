@@ -22,6 +22,48 @@ class User extends CI_Controller {
 			
 	}
 
+	//show user with data table
+	public function fetch_user()
+	{
+
+		//echo '<pre>';print_r($_POST);die;
+		$fetch_data = $this->user_model->datatables();
+		$data = array();
+		// echo '<pre>';print_r($fetch_data);die;
+		
+		$i = 1;
+		foreach ($fetch_data as $row)
+		{
+			$html  = '';
+			$html .= '<button data-id="'.$row->id.'" type="button" class="btn btn-primary btn-sm edit_user_btn" href="javascript:void(0)">
+                     Edit</button>
+                    <a href="'.base_url().'delete-user/ '.$row->id.'" class="btn btn-danger btn-sm">Delete</a>';
+            $test = array();
+            $test[] = $i;
+            $test[] = $row->name;
+            $test[] = $row->email;
+            $test[] = $row->user_mobile;
+            $test[] = $row->user_address;
+            $test[] = $row->user_type;
+            $test[] = '<img height="50" weidtht="50" src="'.base_url().'uploads/'.$row->user_image.'">';
+            $test[] = $html;
+
+            $data[] = $test;
+            $i++;
+            //echo '<pre>';print_r($data);die;
+        }
+            $output = array(
+			"draw"             => intval($_POST["draw"]),
+			"recordsTotal"     => $this->user_model->get_all_data(),
+			"rescordsFiltered" => $this->user_model->get_filtered_data(),
+			"data"             => $data
+
+		);
+            
+		echo json_encode($output);
+		//echo '<pre>';print_r($output);die;
+	}
+
 	public function add_user()
 	{
 		// $data = array();
@@ -84,6 +126,9 @@ class User extends CI_Controller {
 
 		$data['all_user']         = $this->user_model->get_all_user();
 
+		// $ajaxdata = $this->user_model->get_all_user();
+  //       echo json_encode($ajaxdata);
+
 		//$data['user_info']         = $this->user_model->user_info();
 		//echo "<pre>";print_r($data['all_user']);die;
 
@@ -104,6 +149,8 @@ class User extends CI_Controller {
 		$data = array();
 
 		$data['all_user']         = $this->user_model->get_all_user();
+
+		//echo json_encode($get_student); 
 
 		//$data['user_info']        = $this->user_model->user_info($id);
 
@@ -177,5 +224,20 @@ class User extends CI_Controller {
 		$this->session->set_flashdata('message', 'Successfully Deleted');
 		redirect('show-user');
 	}
+
+	public function user_data()
+	{
+        $data = $this->user_model->get_all_user();
+        echo json_encode($data);
+    }
+
+    public function ajax_user_data() {
+    	$get = $this->input->get();
+    	
+    	$data['get_user'] = $this->user_model->user_info($get['id']);
+    	$data['edit_user'] = $this->load->view('admin/user/edit_user_modal', $data, true);
+    	echo json_encode($data);
+        exit();
+    }
 
 }

@@ -1,26 +1,23 @@
 <title>
     <?php echo $title;?>
 </title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashi Template">
+    <meta name="keywords" content="Fashi, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fashi | Template</title>
 
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/animate.css">
-    
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/magnific-popup.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/aos.css">
-
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/ionicons.min.css">
-
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/jquery.timepicker.css">
-
-    
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/flaticon.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/icomoon.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/style.css">
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/style.css" type="text/css">

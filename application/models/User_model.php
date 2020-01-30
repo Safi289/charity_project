@@ -40,4 +40,65 @@ class User_model extends CI_Model {
 		$this->db->delete('tbl_users');
 	}
 
+
+	var $table         = "tbl_users";
+	var $select_column = array("id", "name", "email", "user_mobile", "user_address", "user_type", "user_image");
+	var $order_column  = array(null, "name", "email", null, null); 
+
+
+	//call from this model
+	public function query()
+	{
+		$this->db->select($this->select_column);
+		$this->db->from($this->table);
+
+		// if($this->input->post('search', 'value'))
+		// {
+		// 	$this->db->like("name", $this->input->post('search', 'value'));
+		// 	$this->db->or_like("id", $this->input->post('search', 'value'));
+		// }
+
+		if( $this->input->post('order'))
+		{	
+			$this->db->order_by($this->order_column[$this->input->post('order', '0', 'column')], $this->input->post('order', '0', 'dir'));
+		}
+
+		else
+		{
+			$this->db->order_by("id", "ASC");
+		}
+	}
+
+
+	// call from controllers
+	public function datatables()
+	{
+		$this->query();
+
+		$this->db->limit($this->input->post('length'), $this->input->post('start'));
+
+		$query = $this->db->get();
+
+		return $query->result();
+
+	}
+
+
+	public function get_filtered_data()
+	{
+		$this->query();
+		$query = $this->db->get();
+		return $query->num_rows(); 
+	}
+
+	public function get_all_data()
+	{
+		$this->db->select($this->select_column);
+		$this->db->from($this->table);
+		return $this->db->count_all_results();
+	}
+
+
+	
+
 }
