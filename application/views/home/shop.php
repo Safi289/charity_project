@@ -20,42 +20,26 @@
                     <div class="filter-widget">
                         <h4 class="fw-title">Categories</h4>
                         <ul class="filter-catagories">
-                            <li><a href="#">Men</a></li>
-                            <li><a href="#">Women</a></li>
-                            <li><a href="#">Kids</a></li>
+                            <?php foreach($get_all_categories as $row) { ?>
+                            <li><a href="#"><?php echo $row['cat_name']; ?></a></li>
+                            <?php } ?>
                         </ul>
                     </div>
                     <div class="filter-widget">
                         <h4 class="fw-title">Brand</h4>
                         <div class="fw-brand-check">
+                            <?php foreach($all_brand as $row){ ?>
                             <div class="bc-item">
                                 <label for="bc-calvin">
-                                    Calvin Klein
+                                    <?php echo $row['brand_name']; ?>
                                     <input type="checkbox" id="bc-calvin">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <div class="bc-item">
-                                <label for="bc-diesel">
-                                    Diesel
-                                    <input type="checkbox" id="bc-diesel">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="bc-item">
-                                <label for="bc-polo">
-                                    Polo
-                                    <input type="checkbox" id="bc-polo">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="bc-item">
-                                <label for="bc-tommy">
-                                    Tommy Hilfiger
-                                    <input type="checkbox" id="bc-tommy">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
+                            <?php } ?>
+                           
+                          
+                            
                         </div>
                     </div>
                     <div class="filter-widget">

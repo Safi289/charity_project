@@ -9,6 +9,7 @@ class Home extends CI_Controller {
 
 	    $this->load->model('cat_model');
 	    $this->load->model('slider_model');
+	    $this->load->model('brand_model');
 	}
 
 	
@@ -54,6 +55,8 @@ class Home extends CI_Controller {
 		$data = array();
 
 		$data['get_all_categories'] = $this->cat_model->get_all_categories();
+
+		$data['all_brand'] = $this->brand_model->get_all_brand();
 
 		$data['title'] = 'shop | Fashi';
 		$data['headerlink'] = $this->load->view('frontend_template/headerlink', $data, TRUE);

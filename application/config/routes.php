@@ -120,4 +120,5 @@ $route['show-slider']             = 'slider/show_slider';
 //Brand Start
 $route['add-brand']           = 'brand/add_brand';
 $route['submit-brand']        = 'brand/submit_brand';
+$route['show-brand']          = 'brand/show_brand';
 //Brand End 

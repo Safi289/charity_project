@@ -76,7 +76,7 @@ class Slider extends CI_Controller {
 		}
 	}
 
-	//show all category
+	//show all slider
 	public function show_slider()
 	{
 		$data = array();

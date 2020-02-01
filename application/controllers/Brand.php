@@ -83,6 +83,27 @@ class Brand extends CI_Controller {
 			redirect('show-brand');
 		}
 	}
+
+	public function show_brand()
+	{
+		$data = array();
+
+		$data['all_brand'] = $this->brand_model->get_all_brand();
+		 // echo '<pre>';print_r($data);die;
+		
+
+		$data['title']         = 'Show Brand';
+		$data['page_title']    = 'Show Brand';
+		$data['headerlink']    = $this->load->view('backend_template/headerlink', $data, TRUE);	
+		$data['header']        = $this->load->view('backend_template/header', $data, TRUE);
+		$data['leftbar']       = $this->load->view('backend_template/leftbar', $data, TRUE);
+		$data['footerlink']    = $this->load->view('backend_template/footerlink', $data, TRUE);
+		$data['footer']        = $this->load->view('backend_template/footer', $data, TRUE);
+		$data['admin_content'] = $this->load->view('admin/brand/show_brand', $data, TRUE);
+
+
+		$this->load->view('admin_main_content', $data);	
+	}
 	
 
 }
