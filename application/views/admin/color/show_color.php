@@ -18,30 +18,30 @@
                 <thead>
                 <tr>
                   <th>SL</th>
-                  <th>Brand Name</th>
-                  <th>Brand Image</th>
+                  <th>Color Name</th>
+                  <th>Color Image</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                  <?php $i = 1;foreach($all_brand as $row)   {?>
+                  <?php $i = 1;foreach($all_color as $row)   {?>
                    <!--  echo '<pre>';print_r($value);die; -->
                     <tr>
                       <td>
                         <?php echo $i;?>
                       </td>
                       <td>
-                        <?php echo $row['brand_name'];?>
+                        <?php echo $row['color_name'];?>
                       </td>
                     
                       <td>
-                       <img src="<?=base_url();?>uploads/brand/<?php echo $row['brand_image'];?>" alt="" style="width: 80px;height: 50px;"> 
+                       <img src="<?=base_url();?>uploads/color/<?php echo $row['color_image'];?>" alt="" style="width: 80px;height: 50px;"> 
                       </td>
                       <td>
-                         <a  href="<?= base_url();?>edit-brand/<?= $row['brand_id']?>" type="button" class="btn btn-primary btn-sm">
+                         <a  href="<?= base_url();?>edit-color/<?= $row['color_id']?>" type="button" class="btn btn-primary btn-sm">
                          Edit
                         </a>
-                        <a href="<?= base_url();?>delete-brand/<?= $row['brand_id']?>" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="<?= base_url();?>delete-color/<?= $row['color_id']?>" class="btn btn-danger btn-sm">Delete</a>
                       </td>
                     </tr>
                   <?php $i++; }?>

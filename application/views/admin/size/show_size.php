@@ -3,7 +3,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Brand Table</h3>
+              <h3 class="box-title">Size Table</h3>
              
               <p class="login-box-msg" style="color: red;font-weight: 600;">
                 <?php 
@@ -18,30 +18,26 @@
                 <thead>
                 <tr>
                   <th>SL</th>
-                  <th>Brand Name</th>
-                  <th>Brand Image</th>
+                  <th>Size Name</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                  <?php $i = 1;foreach($all_brand as $row)   {?>
+                  <?php $i = 1;foreach($all_size as $row)   {?>
                    <!--  echo '<pre>';print_r($value);die; -->
                     <tr>
                       <td>
                         <?php echo $i;?>
                       </td>
                       <td>
-                        <?php echo $row['brand_name'];?>
+                        <?php echo $row['size_name'];?>
                       </td>
-                    
+                  
                       <td>
-                       <img src="<?=base_url();?>uploads/brand/<?php echo $row['brand_image'];?>" alt="" style="width: 80px;height: 50px;"> 
-                      </td>
-                      <td>
-                         <a  href="<?= base_url();?>edit-brand/<?= $row['brand_id']?>" type="button" class="btn btn-primary btn-sm">
+                         <a  href="<?= base_url();?>edit-size/<?= $row['size_id']?>" type="button" class="btn btn-primary btn-sm">
                          Edit
                         </a>
-                        <a href="<?= base_url();?>delete-brand/<?= $row['brand_id']?>" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="<?= base_url();?>delete-size/<?= $row['size_id']?>" class="btn btn-danger btn-sm">Delete</a>
                       </td>
                     </tr>
                   <?php $i++; }?>

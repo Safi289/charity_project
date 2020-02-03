@@ -8,6 +8,21 @@
 
             <form role="form" method="post" action="<?php echo base_url();?>submit-product" enctype="multipart/form-data">
               	<div class="box-body">
+
+                   <div class="col-md-6">
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Select Brand</label><br>
+                        <select name="product_brand" class="form-control">
+                             <option value="">Select</option>
+                             <?php foreach($all_brand as $row) {?>
+                             <option value="<?=$row['brand_id'];?>">
+                             <?php echo $row['brand_name']; ?> 
+                             </option>
+                             <?php }?>
+                        </select>
+                    </div>
+                  </div>
+
                   <div class="col-md-6">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Select Category</label><br>
@@ -22,6 +37,8 @@
 
                     </div>
                   </div>
+
+                 
                   
                   <div class="col-md-6">
   	                <div class="form-group">

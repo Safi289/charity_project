@@ -69,6 +69,14 @@
               </a>
               <ul class="treeview-menu">
                
+               <li>
+                  <a href="<?php echo base_url();?>add-product">
+                    <i class="fa fa-circle-o"></i>
+                     <span>Add Products</span>
+                      <span class="pull-right-container">
+                     </span>
+                  </a>  
+                </li>
 
                 <li>
                   <a href="<?php echo base_url();?>show-product">
@@ -124,6 +132,64 @@
                   <a href="<?php echo base_url();?>show-brand">
                     <i class="fa fa-circle-o"></i>
                      <span>All Brand</span>
+                      <span class="pull-right-container">
+                     </span>
+                  </a>  
+                </li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+              <a href="#">
+                <i class="fa fa-dashboard"></i> <span>Colors</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+               
+                <li>
+                  <a href="<?php echo base_url();?>add-color">
+                    <i class="fa fa-circle-o"></i>
+                     <span>Add Color</span>
+                      <span class="pull-right-container">
+                     </span>
+                  </a>  
+                </li>
+
+                <li>
+                  <a href="<?php echo base_url();?>show-color">
+                    <i class="fa fa-circle-o"></i>
+                     <span>All Colors</span>
+                      <span class="pull-right-container">
+                     </span>
+                  </a>  
+                </li>
+          </ul>
+        </li>
+
+         <li class="treeview">
+              <a href="#">
+                <i class="fa fa-dashboard"></i> <span>Size</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+               
+                <li>
+                  <a href="<?php echo base_url();?>add-size">
+                    <i class="fa fa-circle-o"></i>
+                     <span>Add Size</span>
+                      <span class="pull-right-container">
+                     </span>
+                  </a>  
+                </li>
+
+                <li>
+                  <a href="<?php echo base_url();?>show-size">
+                    <i class="fa fa-circle-o"></i>
+                     <span>All Sizes</span>
                       <span class="pull-right-container">
                      </span>
                   </a>  

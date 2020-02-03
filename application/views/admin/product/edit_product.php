@@ -17,6 +17,22 @@
               <input type="hidden" name="product_id" class="form-control" id="" value="<?php echo $product_info['product_id']; ?>">
 
               	<div class="box-body">
+
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Select Brand</label><br>
+                        <select name="product_brand" class="form-control">
+                             <option value="">Select</option>
+                             <?php foreach($all_brand as $row) {?>
+                             <option value="<?=$row['brand_id'];?>" <?php if($row['brand_id'] == $product_info['product_brand']) {echo 'selected';}?>>
+                             <?php echo $row['brand_name']; ?> 
+                             </option>
+                             <?php }?>
+                        </select>
+
+                    </div>
+                  </div>
+
                   <div class="col-md-6">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Select Category</label><br>

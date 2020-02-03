@@ -4,7 +4,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-text product-more">
                         <a href="./home.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./shop.html">Shop</a>
+                        <a href="./shop.html">Shop</a> 
                         <span>Shopping Cart</span>
                     </div>
                 </div>
@@ -19,6 +19,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="cart-table">
+                       
                         <table>
                             <thead>
                                 <tr>
@@ -31,54 +32,48 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach($cart_item as $item) { ?>
                                 <tr>
-                                    <td class="cart-pic first-row"><img src="<?php echo base_url();?>assets/frontend_asset/img/cart-page/product-1.jpg" alt=""></td>
+                                    <td class="cart-pic first-row">
+
+                                        <img src="<?php echo base_url();?>uploads/<?php echo $item['image'];?>" height="150" width="150" alt="">
+                                    </td>
+
                                     <td class="cart-title first-row">
-                                        <h5>Pure Pineapple</h5>
+                                        <h5><?php echo $item['name']; ?></h5>
                                     </td>
-                                    <td class="p-price first-row">$60.00</td>
+
+                                    <td class="p-price first-row">
+                                        <?php echo '$'.$item["price"].' BDT'; ?>
+                                            
+                                    </td>
+
                                     <td class="qua-col first-row">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
+
+                                        
+                                            
+                                        
+                                                                                             
+                                            <!--  <?php  echo $item["qty"]; ?> -->
+                                            <input type="number" class="form-control text-center" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')">          
+                                            
+                                        
+                                        
+        
                                     </td>
-                                    <td class="total-price first-row">$60.00</td>
-                                    <td class="close-td first-row"><i class="ti-close"></i></td>
+                                    <td class="total-price first-row">
+                                         <?php echo '$'.$item["subtotal"]; ?>
+                                    </td>
+                                     
+                                    <td class="close-td first-row">
+                                        <a href="<?php echo base_url('remove-cart/'.$item["rowid"]); ?>"> 
+                                        <i class="ti-close"></i>
+                                        </a>
+                                    </td>
+                                    
                                 </tr>
-                                <tr>
-                                    <td class="cart-pic"><img src="<?php echo base_url();?>assets/frontend_asset/img/cart-page/product-2.jpg" alt=""></td>
-                                    <td class="cart-title">
-                                        <h5>American lobster</h5>
-                                    </td>
-                                    <td class="p-price">$60.00</td>
-                                    <td class="qua-col">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="total-price">$60.00</td>
-                                    <td class="close-td"><i class="ti-close"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="cart-pic"><img src="<?php echo base_url();?>assets/frontend_asset/img/cart-page/product-3.jpg" alt=""></td>
-                                    <td class="cart-title">
-                                        <h5>Guangzhou sweater</h5>
-                                    </td>
-                                    <td class="p-price">$60.00</td>
-                                    <td class="qua-col">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="total-price">$60.00</td>
-                                    <td class="close-td"><i class="ti-close"></i></td>
-                                </tr>
+                               <?php } ?>
+                               
                             </tbody>
                         </table>
                     </div>
@@ -100,7 +95,7 @@
                             <div class="proceed-checkout">
                                 <ul>
                                     <li class="subtotal">Subtotal <span>$240.00</span></li>
-                                    <li class="cart-total">Total <span>$240.00</span></li>
+                                    <li class="cart-total">Total <span></span></li>
                                 </ul>
                                 <a href="#" class="proceed-btn">PROCEED TO CHECK OUT</a>
                             </div>
@@ -110,3 +105,17 @@
             </div>
         </div>
     </section>
+
+
+<script>
+/* Update item quantity */
+function updateCartItem(obj, rowid){
+    $.get("<?php echo base_url('update_cart_qty/'); ?>", {rowid:rowid, qty:obj.value}, function(resp){
+        if(resp == 'ok'){
+            location.reload();
+        }else{
+            alert('Cart update failed, please try again.');
+        }
+    });
+}
+</script>

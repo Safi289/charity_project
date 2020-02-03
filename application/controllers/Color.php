@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Brand extends CI_Controller {
+class Color extends CI_Controller {
 	public function __construct()
 	{
 	    parent::__construct();
@@ -12,7 +12,7 @@ class Brand extends CI_Controller {
 	    	redirect('login');
 	    }
 
-	    $this->load->model('brand_model');
+	    $this->load->model('color_model');
 	}
 
 	public function index()
@@ -20,37 +20,37 @@ class Brand extends CI_Controller {
 			
 	}
 
-	public function add_brand()
+	public function add_color()
 	{
 		$data = array();
 
-		$data['title']         = 'Add Brand | Admin';
-		$data['page_title']    = 'Add Brand';
+		$data['title']         = 'Add Color | Admin';
+		$data['page_title']    = 'Add Color';
 		$data['headerlink']    = $this->load->view('backend_template/headerlink', $data, TRUE);
 		$data['header']        = $this->load->view('backend_template/header', $data, TRUE);
 		$data['leftbar']       = $this->load->view('backend_template/leftbar', $data, TRUE);
 		$data['footerlink']    = $this->load->view('backend_template/footerlink', $data, TRUE);
 		$data['footer']        = $this->load->view('backend_template/footer', $data, TRUE);
-		$data['admin_content'] = $this->load->view('admin/brand/add_brand', $data, TRUE);
+		$data['admin_content'] = $this->load->view('admin/color/add_color', $data, TRUE);
 
 		$this->load->view('admin_main_content', $data);
 
 	}
 
-	public function submit_brand()
+	public function submit_color()
 	{
 		$post = $this->input->post();
 
 		$data = array();
 
-		$data['brand_name'] = $post['brand_name'];
+		$data['color_name'] = $post['color_name'];
 
-		$config['upload_path']          = 'uploads/brand/';
+		$config['upload_path']          = 'uploads/color/';
         $config['allowed_types']        = 'gif|jpg|png';
 
         $this->load->library('upload', $config);
 
-        if ( ! $this->upload->do_upload('brand_image'))
+        if ( ! $this->upload->do_upload('color_image'))
         {
             $error = array('error' => $this->upload->display_errors());
             // echo "<pre>";print_r($error['error']);die;
@@ -58,35 +58,35 @@ class Brand extends CI_Controller {
         else
         {
             $file_data = $this->upload->data();
-            $data['brand_image'] = $file_data['file_name']; 
+            $data['color_image'] = $file_data['file_name']; 
             //echo "<pre>";print_r($data);die;
         }
 
-        $this->form_validation->set_rules('brand_name', 'Brand Name', 'required');
+        $this->form_validation->set_rules('color_name', 'Color Name', 'required');
 
-        if (empty($_FILES['brand_image']['name']))
+        if (empty($_FILES['color_image']['name']))
         {
-            $this->form_validation->set_rules('brand_image', 'Brand Image', 'required');
+            $this->form_validation->set_rules('color_image', 'Color Image', 'required');
         }
 
         if ($this->form_validation->run() == FALSE)
         {
-			redirect('show-brand');	
+			redirect('show-color');	
 		}
 		else
 		{
 			//echo '<pre>'; print_r($data); die;
-			$this->brand_model->add_brand($data);	
+			$this->color_model->add_color($data);	
 
-			redirect('show-brand');
+			redirect('show-color');
 		}
 	}
 
-	public function show_brand()
+	public function show_color()
 	{
 		$data = array();
 
-		$data['all_brand'] = $this->brand_model->get_all_brand();
+		$data['all_color'] = $this->color_model->get_all_color();
 		 // echo '<pre>';print_r($data);die;
 		
 
@@ -97,78 +97,78 @@ class Brand extends CI_Controller {
 		$data['leftbar']       = $this->load->view('backend_template/leftbar', $data, TRUE);
 		$data['footerlink']    = $this->load->view('backend_template/footerlink', $data, TRUE);
 		$data['footer']        = $this->load->view('backend_template/footer', $data, TRUE);
-		$data['admin_content'] = $this->load->view('admin/brand/show_brand', $data, TRUE);
+		$data['admin_content'] = $this->load->view('admin/color/show_color', $data, TRUE);
 
 
 		$this->load->view('admin_main_content', $data);	
 	}
 
-	public function edit_brand($brand_id)
+	public function edit_color($color_id)
 	{
 		$data = array();
 		//$data['all_brand']  = $this->brand_model->get_all_brand();
-		$data['brand_info'] = $this->brand_model->get_brand_info($brand_id);
+		$data['color_info'] = $this->color_model->get_color_info($color_id);
 		
-		$data['title'] = 'Edit Brand';
-		$data['page_title'] = 'Brand';
+		$data['title'] = 'Edit Color';
+		$data['page_title'] = 'Color';
 		$data['headerlink'] = $this->load->view('backend_template/headerlink', $data, TRUE);	
 		$data['header'] = $this->load->view('backend_template/header', $data, TRUE);
 		$data['leftbar'] = $this->load->view('backend_template/leftbar', $data, TRUE);
 		$data['footerlink'] = $this->load->view('backend_template/footerlink', $data, TRUE);
 		$data['footer'] = $this->load->view('backend_template/footer', $data, TRUE);
-		$data['admin_content'] = $this->load->view('admin/brand/edit_brand', $data, TRUE);
+		$data['admin_content'] = $this->load->view('admin/color/edit_color', $data, TRUE);
 
 		$this->load->view('admin_main_content', $data);	
 	}
 
-	public function update_brand()
+	public function update_color()
 	{
 		$post = $this->input->post();
 
 		$data = array();
 
-		$data['brand_name']        = $post['brand_name'];
+		$data['color_name']        = $post['color_name'];
 
 
-		$brand_id = $post['brand_id'];
+		$color_id = $post['color_id'];
 
-		$data['brand_image'] = $this->input->post('prev_brand_image');
+		$data['color_image'] = $this->input->post('prev_color_image');
 
-		$config['upload_path']          = 'uploads/brand/';
+		$config['upload_path']          = 'uploads/color/';
         $config['allowed_types']        = 'gif|jpg|png';
 
         $this->load->library('upload', $config);
 
-        if ( ! $this->upload->do_upload('brand_image'))
+        if ( ! $this->upload->do_upload('color_image'))
         {
             $error = array('error' => $this->upload->display_errors());
         }
         else
         {
         	$file_data = $this->upload->data();
-            $data['brand_image'] = $file_data['file_name'];
+            $data['color_image'] = $file_data['file_name'];
         }
 
       
-        $brand_info = $this->brand_model->get_brand_info($brand_id);
-        unlink("uploads/brand/".$brand_info['brand_image']);
+        $color_info = $this->color_model->get_color_info($color_id);
+        unlink("uploads/color/".$color_info['color_image']);
 
-		$this->brand_model->update_brand_info($brand_id, $data);	
+		$this->color_model->update_color_info($color_id, $data);	
 		//echo "<pre>";print_r($data);die;
 		$this->session->set_flashdata('message', 'Successfully Updated');	
-		redirect('show-brand');
+		redirect('show-color');
 	}
 
-	public function delete_brand($brand_id)
+	public function delete_color($color_id)
 	{
-		$brand_info = $this->brand_model->get_brand_info($brand_id);
+		$color_info = $this->color_model->get_color_info($color_id);
 		//echo "<pre>";print_r($brand_info);die;
-		unlink("uploads/brand/".$brand_info['brand_image']);
+		unlink("uploads/color/".$color_info['color_image']);
 
-		$this->brand_model->delete_brand($brand_id);
+		$this->color_model->delete_color($color_id);
 
 		$this->session->set_flashdata('message', 'Successfully Deleted');
-		redirect('show-brand');
+		redirect('show-color');
 	}
 
 }

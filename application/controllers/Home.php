@@ -10,6 +10,11 @@ class Home extends CI_Controller {
 	    $this->load->model('cat_model');
 	    $this->load->model('slider_model');
 	    $this->load->model('brand_model');
+	    $this->load->model('color_model');
+	    $this->load->model('size_model');
+	    $this->load->model('pro_model');
+
+	    $this->load->library('cart');
 	}
 
 	
@@ -19,6 +24,8 @@ class Home extends CI_Controller {
 
 		 $data['get_all_categories'] = $this->cat_model->get_all_categories();
 		 $data['all_slider'] = $this->slider_model->get_all_slider();
+		 $data['all_brand'] = $this->brand_model->get_all_brand();
+
 		// echo'<pre>'; print_r($data); die;
 		 
 		 $data['title'] = 'Home | Fashi';
@@ -39,6 +46,7 @@ class Home extends CI_Controller {
 		$data = array();
 
 		$data['title'] = 'Contact | Aid';
+		$data['all_brand'] = $this->brand_model->get_all_brand();
 		$data['headerlink'] = $this->load->view('frontend_template/headerlink', $data, TRUE);
 		$data['header'] = $this->load->view('frontend_template/header', $data, TRUE);
 		$data['footer'] = $this->load->view('frontend_template/footer', $data, TRUE);
@@ -56,7 +64,10 @@ class Home extends CI_Controller {
 
 		$data['get_all_categories'] = $this->cat_model->get_all_categories();
 
-		$data['all_brand'] = $this->brand_model->get_all_brand();
+		$data['all_brand']    = $this->brand_model->get_all_brand();
+		$data['all_color']    = $this->color_model->get_all_color();
+		$data['all_size']     = $this->size_model->get_all_size();
+		$data['product_info'] = $this->pro_model->get_all_product();
 
 		$data['title'] = 'shop | Fashi';
 		$data['headerlink'] = $this->load->view('frontend_template/headerlink', $data, TRUE);
@@ -75,6 +86,7 @@ class Home extends CI_Controller {
 		$data = array();
 
 		$data['get_all_categories'] = $this->cat_model->get_all_categories();
+		$data['all_brand'] = $this->brand_model->get_all_brand();
 
 		$data['title'] = 'Blog | Fashi';
 		$data['headerlink'] = $this->load->view('frontend_template/headerlink', $data, TRUE);
@@ -93,6 +105,7 @@ class Home extends CI_Controller {
 		$data = array();
 
 		$data['get_all_categories'] = $this->cat_model->get_all_categories();
+		$data['all_brand'] = $this->brand_model->get_all_brand();
 
 		$data['title'] = 'Blog-Detail | Fashi';
 		$data['headerlink'] = $this->load->view('frontend_template/headerlink', $data, TRUE);
@@ -111,6 +124,7 @@ class Home extends CI_Controller {
 		$data = array();
 
 		$data['get_all_categories'] = $this->cat_model->get_all_categories();
+		$data['all_brand'] = $this->brand_model->get_all_brand();
 
 		$data['title'] = 'Shopping-Cart | Fashi';
 		$data['headerlink'] = $this->load->view('frontend_template/headerlink', $data, TRUE);
@@ -129,6 +143,7 @@ class Home extends CI_Controller {
 		$data = array();
 
 		$data['get_all_categories'] = $this->cat_model->get_all_categories();
+		$data['all_brand'] = $this->brand_model->get_all_brand();
 
 		$data['title'] = 'Check-Out| Fashi';
 		$data['headerlink'] = $this->load->view('frontend_template/headerlink', $data, TRUE);
@@ -147,6 +162,7 @@ class Home extends CI_Controller {
 		$data = array();
 
 		$data['get_all_categories'] = $this->cat_model->get_all_categories();
+		$data['all_brand'] = $this->brand_model->get_all_brand();
 
 		$data['title'] = 'Register| Fashi';
 		$data['headerlink'] = $this->load->view('frontend_template/headerlink', $data, TRUE);
@@ -165,6 +181,7 @@ class Home extends CI_Controller {
 		$data = array();
 
 		$data['get_all_categories'] = $this->cat_model->get_all_categories();
+		$data['all_brand'] = $this->brand_model->get_all_brand();
 
 		$data['title'] = 'Login| Fashi';
 		$data['headerlink'] = $this->load->view('frontend_template/headerlink', $data, TRUE);

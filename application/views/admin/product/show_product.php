@@ -3,9 +3,12 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Products Table</h3>
-              <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#add_product">
+              <!-- for modal -->
+             <!--  <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#add_product">
                 Add Product
-              </button>
+              </button> -->
+              <!-- for another page -->
+              <a href="<?= base_url();?>add-product" class="btn btn-primary btn-sm pull-right">Add Product</a>
                <p class="login-box-msg" style="color: green;font-weight: 600;">
                 <?php 
                     $message = $this->session->flashdata('message');
@@ -19,6 +22,7 @@
                 <thead>
                 <tr>
                   <th>SL</th>
+                  <th>Product Brand</th>
                   <th>Product Category</th>
                   <th>Product Name</th>
                   <th>Product Price</th>
@@ -31,6 +35,9 @@
                     <tr>
                       <td>
                          <?php echo $sl;?> 
+                      </td>
+                      <td>
+                        <?php echo $row['brand_name'];?> 
                       </td>
                       <td>
                         <?php echo $row['cat_name'];?> 
@@ -52,9 +59,10 @@
                         }?> 
                       </td>
                       <td>
-                        <button  data-id="<?php echo $row['product_id']; ?>" type="button" class="btn btn-primary edit_product_btn" href="javascript:void(0)">
+                       <!--  <button  data-id="<?php echo $row['product_id']; ?>" type="button" class="btn btn-primary edit_product_btn" href="javascript:void(0)">
                          Edit
-                        </button>
+                        </button> -->
+                        <a href="<?= base_url();?>edit-product/<?= $row['product_id']?>" class="btn btn-primary btn-sm">Edit</a>
                         <a href="<?= base_url();?>delete-product/<?= $row['product_id']?>" class="btn btn-danger btn-sm">Delete</a>
 
 

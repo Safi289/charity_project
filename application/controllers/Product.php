@@ -14,6 +14,7 @@ class Product extends CI_Controller {
 
 	    $this->load->model('cat_model');
 	    $this->load->model('pro_model');
+	    $this->load->model('brand_model');
 	}
 
 	public function index()
@@ -26,6 +27,7 @@ class Product extends CI_Controller {
 		$data = array();
 
 		$data['all_category']  = $this->cat_model->get_all_categories();
+		$data['all_brand']  = $this->brand_model->get_all_brand();
 
 		$data['title']         = 'Add Product';
 		$data['page_title']    = 'Products';
@@ -45,6 +47,7 @@ class Product extends CI_Controller {
 		
 		$data = array();
 		$data['product_name']        = $post['pro_name'];
+		$data['product_brand']       = $post['product_brand'];
 		$data['product_category']    = $post['pro_category'];
 		$data['product_price']       = $post['pro_price'];
 		$data['product_description'] = $post['pro_description'];
@@ -82,6 +85,7 @@ class Product extends CI_Controller {
 
 		$data['product_info']     = $this->pro_model->get_all_product();
 		$data['all_category']     = $this->cat_model->get_all_categories();
+		$data['all_brand']        = $this->brand_model->get_all_brand();
 		//echo "<pre>";print_r($data['product_info']);die;
 
 		$data['title']            = 'Show Product';
@@ -100,7 +104,8 @@ class Product extends CI_Controller {
 	{
 		$data = array();
 		$data['all_category']  = $this->cat_model->get_all_categories();
-		$data['product_info'] = $this->pro_model->get_product_info($product_id);
+		$data['all_brand']     = $this->brand_model->get_all_brand();
+		$data['product_info']  = $this->pro_model->get_product_info($product_id);
 		// echo '<pre>';print_r($data['product_info']);die;
 		$data['title'] = 'Edit Product';
 		$data['page_title'] = 'Product';
@@ -120,6 +125,7 @@ class Product extends CI_Controller {
 
 		$data = array();
 
+		$data['product_brand']       = $post['product_brand'];
 		$data['product_category']    = $post['pro_category'];
 		$data['product_name']        = $post['pro_name'];
 		$data['product_price']       = $post['pro_price'];
@@ -151,7 +157,7 @@ class Product extends CI_Controller {
             $data['product_image'] = $file_data['file_name'];
         }
 
-        //echo "<pre>";print_r($data);die;
+       // echo "<pre>";print_r($data);die;
 
 		$this->pro_model->update_product_info($product_id, $data);	
 		//echo "<pre>";print_r($data);die;

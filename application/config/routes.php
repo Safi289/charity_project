@@ -83,7 +83,7 @@ $route['edit-category/(:any)']   = 'dashboard/edit_category/$1';
 $route['update-category']        = 'dashboard/update_category';
 $route['delete-category/(:any)'] = 'dashboard/delete_category/$1';
 
-$route['ajax-category-data']        = 'dashboard/ajax_category_data';
+$route['ajax-category-data']     = 'dashboard/ajax_category_data';
 //Category End
 
 //Product Start
@@ -121,4 +121,32 @@ $route['show-slider']             = 'slider/show_slider';
 $route['add-brand']           = 'brand/add_brand';
 $route['submit-brand']        = 'brand/submit_brand';
 $route['show-brand']          = 'brand/show_brand';
+$route['edit-brand/(:any)']   = 'brand/edit_brand/$1';
+$route['update-brand']        = 'brand/update_brand';
+$route['delete-brand/(:any)'] = 'brand/delete_brand/$1';
 //Brand End 
+
+//Color Start
+$route['add-color']           = 'color/add_color';
+$route['submit-color']        = 'color/submit_color';
+$route['show-color']          = 'color/show_color';
+$route['edit-color/(:any)']   = 'color/edit_color/$1';
+$route['update-color']        = 'color/update_color';
+$route['delete-color/(:any)'] = 'color/delete_color/$1';
+//Color End
+
+//Size Start
+$route['add-size']           = 'size/add_size';
+$route['submit-size']        = 'size/submit_size';
+$route['show-size']          = 'size/show_size';
+$route['edit-size/(:any)']   = 'size/edit_size/$1';
+$route['update-size']        = 'size/update_size';
+$route['delete-size/(:any)'] = 'size/delete_size/$1';
+//Size End
+
+//Cart Start
+$route['cart']                      = 'cart';
+$route['add-cart/(:any)']           = 'cart/add_cart/$1';
+$route['remove-cart/(:any)']        = 'cart/remove_cart/$1';
+$route['update-cart-qty/(:any)']    = 'cart/update_cart_qty/$1';
+//Cart End

@@ -17,6 +17,7 @@ class Pro_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_product');
 		$this->db->join('tbl_category', 'tbl_product.product_category = tbl_category.cat_id', 'LEFT');
+		$this->db->join('tbl_brand', 'tbl_product.product_brand = tbl_brand.brand_id', 'LEFT');
 
 		$query = $this->db->get();
 		return $query->result_array();
