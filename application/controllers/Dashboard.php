@@ -13,7 +13,13 @@ class Dashboard extends CI_Controller {
 	    }
 
 	    $this->load->model('cat_model');
+	    $this->load->model('order_model');
+
+	    
 	}
+
+	    // use PhpOffice\PhpSpreadsheet\Spreadsheet;
+     //    use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 	public function index()
 	{ 
@@ -228,5 +234,70 @@ class Dashboard extends CI_Controller {
 	 	echo json_encode($data);
         exit();
 	}
+
+	public function show_order()
+	{
+		$data = array();
+
+		$data['all_order'] = $this->order_model->get_all_order();
+		//echo '<pre>'; print_r($data); die;
+
+		$data['title']            = 'Show Orders';
+		$data['page_title']       = 'Show Orders';
+		$data['headerlink'] = $this->load->view('backend_template/headerlink', $data, TRUE);	
+		$data['header'] = $this->load->view('backend_template/header', $data, TRUE);
+		$data['leftbar'] = $this->load->view('backend_template/leftbar', $data, TRUE);
+		$data['footerlink'] = $this->load->view('backend_template/footerlink', $data, TRUE);
+		$data['footer'] = $this->load->view('backend_template/footer', $data, TRUE);
+		$data['admin_content'] = $this->load->view('admin/order/show_order', $data, TRUE);
+
+		$this->load->view('admin_main_content', $data);	
+	}
+
+	public function show_detail($id)
+	{
+		$data = array();
+
+		$data['get_order'] = $this->order_model->order_info($id);
+
+
+		// echo '<pre>'; print_r($data); die;
+
+		$data['title']            = 'Order Detail';
+		$data['page_title']       = 'Orders';
+
+		$this->load->view('admin/order/show_detail', $data);	
+	}
+
+	public function generate_excel()
+	{
+		$spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', 'Hello World !');
+        
+        $writer = new Xlsx($spreadsheet);
+ 
+        $filename = 'name-of-the-generated-file.xlsx';
+ 
+        $writer->save($filename);
+	}
+
+	public function download()
+    {
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', 'Hello World !');
+        
+        $writer = new Xlsx($spreadsheet);
+ 
+        $filename = 'name-of-the-generated-file';
+ 
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="'. $filename .'.xlsx"'); 
+        header('Cache-Control: max-age=0');
+        
+        $writer->save('php://output'); // download file 
+ 
+    }
 
 }

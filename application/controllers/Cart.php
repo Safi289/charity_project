@@ -84,12 +84,11 @@ class Cart extends CI_Controller {
         
         // Return response
         echo $update?'ok':'err';
+       // echo '<pre>'; print_r($update); die;
     }
 
+
 	 function remove_cart($rowid){
-        // Remove item from cart
-        // $remove = $this->cart->remove($rowid);
-        // echo '<pre>'; print_r($remove); die;
 
         $data = array(
 	        'rowid' => $rowid,

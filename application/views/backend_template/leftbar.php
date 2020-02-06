@@ -197,6 +197,26 @@
           </ul>
         </li>
 
+        <li class="treeview">
+              <a href="#">
+                <i class="fa fa-dashboard"></i> <span>Orders</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+               
+                <li>
+                  <a href="<?php echo base_url();?>show-order">
+                    <i class="fa fa-circle-o"></i>
+                     <span>Order List</span>
+                      <span class="pull-right-container">
+                     </span>
+                  </a>  
+                </li>
+          </ul>
+        </li>
+
         <!-- <li class="treeview">
               <a href="#">
                 <i class="fa fa-dashboard"></i> <span>Users</span>

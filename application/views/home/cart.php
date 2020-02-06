@@ -49,17 +49,9 @@
                                     </td>
 
                                     <td class="qua-col first-row">
+   
+                                       <input type="number" class="form-control text-center" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')">          
 
-                                        
-                                            
-                                        
-                                                                                             
-                                            <!--  <?php  echo $item["qty"]; ?> -->
-                                            <input type="number" class="form-control text-center" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')">          
-                                            
-                                        
-                                        
-        
                                     </td>
                                     <td class="total-price first-row">
                                          <?php echo '$'.$item["subtotal"]; ?>
@@ -97,7 +89,7 @@
                                     <li class="subtotal">Subtotal <span>$240.00</span></li>
                                     <li class="cart-total">Total <span></span></li>
                                 </ul>
-                                <a href="#" class="proceed-btn">PROCEED TO CHECK OUT</a>
+                                <a href="<?php echo base_url('checkout/'); ?>" class="proceed-btn">PROCEED TO CHECK OUT</a>
                             </div>
                         </div>
                     </div>
@@ -110,7 +102,7 @@
 <script>
 /* Update item quantity */
 function updateCartItem(obj, rowid){
-    $.get("<?php echo base_url('update_cart_qty/'); ?>", {rowid:rowid, qty:obj.value}, function(resp){
+    $.get("<?php echo base_url('cart/update_cart_qty/'); ?>", {rowid:rowid, qty:obj.value}, function(resp){
         if(resp == 'ok'){
             location.reload();
         }else{

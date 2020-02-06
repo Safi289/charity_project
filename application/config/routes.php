@@ -150,3 +150,17 @@ $route['add-cart/(:any)']           = 'cart/add_cart/$1';
 $route['remove-cart/(:any)']        = 'cart/remove_cart/$1';
 $route['update-cart-qty/(:any)']    = 'cart/update_cart_qty/$1';
 //Cart End
+
+//Check out start
+$route['checkout']                   = 'checkout';
+$route['submit-order']               = 'checkout/submit_order';
+$route['checkout-complete']          = 'checkout/checkout_complete';
+//Check out End
+
+//order List start
+$route['show-order']                  = 'dashboard/show_order';
+$route['show-detail/(:any)']          = 'dashboard/show_detail/$1';
+//order list end
+
+$route['pdf/(:any)']                  = 'GeneratePdfController/generate_pdf/$1';
+$route['generateXls/(:any)']          = 'export/generateXls/$1';

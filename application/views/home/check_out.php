@@ -16,7 +16,7 @@
     <!-- Shopping Cart Section Begin -->
     <section class="checkout-section spad">
         <div class="container">
-            <form action="#" class="checkout-form">
+            <form action="<?php echo base_url();?>submit-order" class="checkout-form" method="post">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="checkout-content">
@@ -26,41 +26,40 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <label for="fir">First Name<span>*</span></label>
-                                <input type="text" id="fir">
+                                <input name="first_name" type="text" id="fir" required>
                             </div>
                             <div class="col-lg-6">
                                 <label for="last">Last Name<span>*</span></label>
-                                <input type="text" id="last">
+                                <input name="last_name" type="text" id="last" required>
                             </div>
                             <div class="col-lg-12">
                                 <label for="cun-name">Company Name</label>
-                                <input type="text" id="cun-name">
+                                <input name="company_name" type="text" id="cun-name">
                             </div>
                             <div class="col-lg-12">
                                 <label for="cun">Country<span>*</span></label>
-                                <input type="text" id="cun">
+                                <input name="country" type="text" id="cun" required>
                             </div>
                             <div class="col-lg-12">
-                                <label for="street">Street Address<span>*</span></label>
-                                <input type="text" id="street" class="street-first">
-                                <input type="text">
+                                <label for="street">Address<span>*</span></label>
+                                <input name="address" type="text" id="street" class="street-first" required>
+                               
                             </div>
+                            
                             <div class="col-lg-12">
-                                <label for="zip">Postcode / ZIP (optional)</label>
-                                <input type="text" id="zip">
-                            </div>
-                            <div class="col-lg-12">
-                                <label for="town">Town / City<span>*</span></label>
-                                <input type="text" id="town">
+                                <label for="town">City<span>*</span></label>
+                                <input name="city" type="text" id="town">
                             </div>
                             <div class="col-lg-6">
                                 <label for="email">Email Address<span>*</span></label>
-                                <input type="text" id="email">
+                                <input name="email" type="text" id="email" required>
                             </div>
                             <div class="col-lg-6">
                                 <label for="phone">Phone<span>*</span></label>
-                                <input type="text" id="phone">
+                                <input name="phone" type="text" id="phone" required>
                             </div>
+
+
                             <div class="col-lg-12">
                                 <div class="create-item">
                                     <label for="acc-create">
@@ -81,11 +80,25 @@
                             <div class="order-total">
                                 <ul class="order-table">
                                     <li>Product <span>Total</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$60.00</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$60.00</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$120.00</span></li>
-                                    <li class="fw-normal">Subtotal <span>$240.00</span></li>
-                                    <li class="total-price">Total <span>$240.00</span></li>
+                                    <?php $total = 0; foreach($cart_item as $row) { ?>  
+
+                                     <input type="hidden" name="item_id[]" class="form-control" id="" value="<?php echo $row['id']; ?>">
+
+                                     <input type="hidden" name="qty[]" class="form-control" id="" value="<?php echo $row['qty']; ?>">
+
+                                      <input type="hidden" name="subtotal[]" class="form-control" id="" value="<?php echo $row['subtotal']; ?>">
+
+                                    <li class="fw-normal" ><?php echo $row['name']  .' X '.$row['qty']; ?>
+                                        <span>
+                                            <?php echo $row['subtotal']; 
+                                                $total = $total + $row['subtotal'];
+                                            ?>
+                                        </span>
+                                    </li>
+
+                                    <?php } ?>
+                                    <input type="hidden" name="total" value="<?php echo $total; ?>">
+                                    <li class="total-price">Total <span id=""><?php echo  $total.' BDT'; ?></span></li>
                                 </ul>
                                 <div class="payment-check">
                                     <div class="pc-item">
