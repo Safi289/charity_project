@@ -27,18 +27,19 @@ class Export extends CI_Controller {
         $objPHPExcel->getActiveSheet()->SetCellValue('F1', 'Price');  
         $objPHPExcel->getActiveSheet()->SetCellValue('G1', 'Total');     
         // set Row
-       //  $rowCount = 2;
-	      //   foreach ($listInfo as $list) {
+        $rowCount = 2;
+	        foreach ($listInfo as $list)  {
+	        	//echo '<pre>'; print_r($list); die;
 
-	      //       $objPHPExcel->getActiveSheet()->SetCellValue('A' . $rowCount, $list->order_id);
+	            $objPHPExcel->getActiveSheet()->SetCellValue('A' . $rowCount, $list['order_id']);
 	      //       $objPHPExcel->getActiveSheet()->SetCellValue('B' . $rowCount, $list->product_name);
 	      //       $objPHPExcel->getActiveSheet()->SetCellValue('C' . $rowCount, $list->product_description);
 	      //       $objPHPExcel->getActiveSheet()->SetCellValue('D' . $rowCount, $list->product_price);
 	      //       $objPHPExcel->getActiveSheet()->SetCellValue('E' . $rowCount, $list->item_qty);
 			    // $objPHPExcel->getActiveSheet()->SetCellValue('F' . $rowCount, $list->item_subtotal);
 	      //   	$objPHPExcel->getActiveSheet()->SetCellValue('G' . $rowCount, $list->total);
-       //   	    $rowCount++;
-       //   }
+         	    $rowCount++;
+         }
         $filename = "tutsmake". date("Y-m-d-H-i-s").".csv";
         header('Content-Type: application/vnd.ms-excel'); 
         header('Content-Disposition: attachment;filename="'.$filename.'"');

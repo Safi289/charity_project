@@ -164,3 +164,4 @@ $route['show-detail/(:any)']          = 'dashboard/show_detail/$1';
 
 $route['pdf/(:any)']                  = 'GeneratePdfController/generate_pdf/$1';
 $route['generateXls/(:any)']          = 'export/generateXls/$1';
+

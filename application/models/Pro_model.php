@@ -18,9 +18,29 @@ class Pro_model extends CI_Model {
 		$this->db->from('tbl_product');
 		$this->db->join('tbl_category', 'tbl_product.product_category = tbl_category.cat_id', 'LEFT');
 		$this->db->join('tbl_brand', 'tbl_product.product_brand = tbl_brand.brand_id', 'LEFT');
+		$this->db->limit('3');
 
 		$query = $this->db->get();
 		return $query->result_array();
+	}
+
+
+	public function get_all_product_count()
+	{
+		// $this->db->select('*');
+		// $this->db->from('tbl_product');
+
+		$this->db->select('count(product_id) as total_row');
+		$this->db->from('tbl_product');
+		$this->db->join('tbl_category', 'tbl_product.product_category = tbl_category.cat_id', 'LEFT');
+		$this->db->join('tbl_brand', 'tbl_product.product_brand = tbl_brand.brand_id', 'LEFT');
+		
+
+		$query = $this->db->get();
+		$result= $query->row_array();
+
+		//echo '<pre>'; print_r($result); die;
+		return $result['total_row'];
 	}
 
 	public function get_product_info($product_id) {
@@ -48,5 +68,28 @@ class Pro_model extends CI_Model {
 		$this->db->where('product_id', $product_id);
 		$this->db->delete('tbl_product');
 	}
+
+	public function get_record($row_no, $row_per_page)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_product');
+		$this->db->join('tbl_category', 'tbl_product.product_category = tbl_category.cat_id', 'LEFT');
+		$this->db->join('tbl_brand', 'tbl_product.product_brand = tbl_brand.brand_id', 'LEFT');
+		$this->db->limit($row_per_page, $row_no);
+
+		$query = $this->db->get();       	
+		return $query->result_array();  
+	}
+
+	public function get_record_count() {
+    	$this->db->select('count(*) as allcount');
+      	$this->db->from('tbl_product');
+      	$this->db->join('tbl_category', 'tbl_product.product_category = tbl_category.cat_id', 'LEFT');
+		$this->db->join('tbl_brand', 'tbl_product.product_brand = tbl_brand.brand_id', 'LEFT');
+
+      	$query = $this->db->get();
+      	$result = $query->result_array();      
+      	return $result[0]['allcount'];
+    }
  
 }

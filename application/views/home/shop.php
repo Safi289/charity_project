@@ -13,8 +13,8 @@
     <!-- Breadcrumb Section Begin -->
 
     <!-- Product Shop Section Begin -->
-    <section class="product-shop spad">
-        <div class="container">
+    <section class="product-shop spad" id="pagination">
+        <div class="container" id="product_list">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
                     <div class="filter-widget">
@@ -150,12 +150,48 @@
                         </div>
                     </div>
                     <div class="loading-more">
-                        <i class="icon_loading"></i>
+                        <i class=""></i><?php echo $this->ajax_pagination->create_links();  ?>
                         <a href="#">
-                            Loading More
+                            
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+<script type='text/javascript'>
+$(document).ready(function() {
+    createPagination(0);
+    $('#pagination').on('click','a',function(e){
+        e.preventDefault(); 
+        var pageNum = $(this).attr('data-ci-pagination-page');
+        createPagination(pageNum);
+    });
+    function createPagination(pageNum){
+        $.ajax({
+            url: '<?=base_url()?>Home/load_data/'+pageNum,
+            type: 'get',
+            dataType: 'json',
+            success: function(responseData){
+                $('#pagination').html(responseData.pagination);
+                paginationData(responseData.product_data);
+            }
+        });
+    }
+    // function paginationData(data) {
+    //     $('#product_list').empty();
+    //     for(emp in data){
+    //         var empRow = "<tr>";
+    //         empRow += "<td>"+ data[emp].id +"</td>";
+    //         empRow += "<td>"+ data[emp].name +"</td>";
+    //         empRow += "<td>"+ data[emp].age +"</td>"
+    //         empRow += "<td>"+ data[emp].skills +"</td>"
+    //         empRow += "<td>"+ data[emp].designation +"</td>"
+    //         empRow += "<td>"+ data[emp].address +"</td>";
+    //         empRow += "</tr>";
+    //         $('#product_list').append(empRow);                    
+    //     }
+    // }
+});
+</script>
