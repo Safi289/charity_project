@@ -140,7 +140,7 @@
                                         </a>
                                         <div class="product-price">
                                             <?php echo $row['product_price']; ?>
-                                            <span>$35.00</span>
+                                            <!-- <span>$35.00</span> -->
                                         </div>
                                     </div>
                                 </div>
@@ -161,37 +161,16 @@
     </section>
 
 <script type='text/javascript'>
-$(document).ready(function() {
-    createPagination(0);
-    $('#pagination').on('click','a',function(e){
-        e.preventDefault(); 
-        var pageNum = $(this).attr('data-ci-pagination-page');
-        createPagination(pageNum);
-    });
-    function createPagination(pageNum){
+
+    function getData(page_num){
         $.ajax({
-            url: '<?=base_url()?>Home/load_data/'+pageNum,
+            url: '<?=base_url()?>home/load_data/'+page_num,
             type: 'get',
-            dataType: 'json',
-            success: function(responseData){
-                $('#pagination').html(responseData.pagination);
-                paginationData(responseData.product_data);
+            success: function(response_data){
+                var obj = (JSON.parse(response_data));
+                $('.product-list').html(obj.productDiv);
             }
         });
     }
-    // function paginationData(data) {
-    //     $('#product_list').empty();
-    //     for(emp in data){
-    //         var empRow = "<tr>";
-    //         empRow += "<td>"+ data[emp].id +"</td>";
-    //         empRow += "<td>"+ data[emp].name +"</td>";
-    //         empRow += "<td>"+ data[emp].age +"</td>"
-    //         empRow += "<td>"+ data[emp].skills +"</td>"
-    //         empRow += "<td>"+ data[emp].designation +"</td>"
-    //         empRow += "<td>"+ data[emp].address +"</td>";
-    //         empRow += "</tr>";
-    //         $('#product_list').append(empRow);                    
-    //     }
-    // }
-});
+
 </script>

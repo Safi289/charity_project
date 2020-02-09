@@ -21,3 +21,5 @@
     <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/frontend_asset/css/style.css" type="text/css">
+
+    <script src="<?php echo base_url();?>assets/frontend_asset/js/jquery-3.3.1.min.js"></script>

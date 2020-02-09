@@ -76,12 +76,13 @@ class Home extends CI_Controller {
 
 		
 		//echo '<pre>'; print_r($record_count); die;
-		$config['base_url']         = base_url().'Home/load_data';
+		$config['base_url']         = base_url().'home/load_data';
       	$config['use_page_numbers'] = TRUE;
 		$config['next_link']        = 'Next';
 		$config['prev_link']        = 'Previous';
 		$config['total_rows']       = $record_count;
 		$config['per_page']         = $this->per_page;
+
 		$this->ajax_pagination->initialize($config);
 
 		$data['title'] = 'shop | Fashi';
@@ -100,25 +101,35 @@ class Home extends CI_Controller {
 
 	public function load_data($record = 0)
 	{
-		$record_per_page = 3;
+		$per_page = 3;
 
 		if($record != 0){
-			$record = ($record-1) * $record_per_page;
+			$record = ($record-1) * $per_page;
 		}
 
 		$record_count   = $this->pro_model->get_record_count();
-		$product_record = $this->pro_model->get_record($record, $record_per_page);
+		$product_record = $this->pro_model->get_record($record, $per_page);
 
-	    $config['base_url']         = base_url().'Home/load_data';
+		//echo '<pre>';print_r($product_record);die;
+
+	    $config['base_url']         = base_url().'home/load_data';
       	$config['use_page_numbers'] = TRUE;
 		$config['next_link']        = 'Next';
 		$config['prev_link']        = 'Previous';
 		$config['total_rows']       = $record_count;
-		$config['per_page']         = $record_per_page;
-		$this->pagination->initialize($config);
-		$data['pagination']         = $this->pagination->create_links();
-		$data['product_data']       = $product_record;
+		$config['per_page']         = $per_page;
+
+		$this->ajax_pagination->initialize($config);
+
+		// $data['pagination']         = $this->ajax_pagination->create_links();
+		$data['product_info']       = $product_record;
+
+		// echo '<pre>';print_r($data['product_info']);die;
+		
+		$data['productDiv'] = $this->load->view('home/product_list', $data, TRUE);
 		echo json_encode($data);
+		// echo '<pre>';print_r($data);die;
+
 	}
 
 	public function blog()

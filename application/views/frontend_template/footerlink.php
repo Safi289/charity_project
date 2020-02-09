@@ -1,4 +1,4 @@
-    <script src="<?php echo base_url();?>assets/frontend_asset/js/jquery-3.3.1.min.js"></script>
+    
     <script src="<?php echo base_url();?>assets/frontend_asset/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>assets/frontend_asset/js/jquery-ui.min.js"></script>
     <script src="<?php echo base_url();?>assets/frontend_asset/js/jquery.countdown.min.js"></script>
